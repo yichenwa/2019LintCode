@@ -18,8 +18,9 @@ def midlargest(S, li, ri, mi):
       rs=sr
       rightl=i
 
-  for i in range (leftl, rightl+1):
-    ll.append(S[i])  
+  #for i in range (leftl, rightl+1):
+    #ll.append(S[i])  
+  ll=[leftl,rightl]
   print("maxs=",ls,"+",rs)
   maxs=ls+rs
   print("mid",maxs,ll)
@@ -27,8 +28,8 @@ def midlargest(S, li, ri, mi):
 
 def sublargest(S,li,ri):
   if li==ri:
-    print("ls",S[li],[S[li]])
-    return (S[li],[S[li]])
+    print("ls",S[li],[li])
+    return (S[li],[li])
   mi = (li+ri)//2
 
   return max(sublargest(S,li,mi),sublargest(S,mi+1, ri), midlargest(S,li,ri,mi))
@@ -36,4 +37,3 @@ def sublargest(S,li,ri):
 S=[88,12,-6,10,-5,2]
 n=len(S)
 print(sublargest(S,0,n-1))
-  
